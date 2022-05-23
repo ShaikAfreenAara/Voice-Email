@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     GoogleSignInClient mGoogleSignInClient;
     private static int RC_SIGN_IN=100;
+    public static String  sender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -75,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
                 String personEmail = acct.getEmail();
                 String personId = acct.getId();
                 Uri personPhoto = acct.getPhotoUrl();
+                sender=personEmail;
+                //Intent  in = new Intent(MainActivity.this, SendMail.class);
+                //in.putExtra("user_name",personEmail);
+
+
+
 
                 Toast.makeText(this,"user mail: "+personEmail,Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, SecondActivity.class));

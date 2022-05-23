@@ -97,7 +97,7 @@ public class SecondActivity extends AppCompatActivity {
         }
     }
 
-   /* private void sendEmail() {
+    private void sendEmail() {
         //Getting content for email
         String email = To.getText().toString().trim();
         String subject = Subject.getText().toString().trim();
@@ -108,7 +108,7 @@ public class SecondActivity extends AppCompatActivity {
 
         //Executing sendmail to send email
         sm.execute();
-    }*/
+    }
 
     private void exitFromApp()
     {
@@ -153,11 +153,11 @@ public class SecondActivity extends AppCompatActivity {
                             break;
 
                         default:
-                            if(result.get(0).equals("yes"))
+                            if(result.get(0).equals("s"))
                             {
                                 status.setText("Sending");
                                 speak("Sending the mail");
-                                //sendEmail();
+                                sendEmail();
                             }else
                             {
                                 status.setText("Restarting");
