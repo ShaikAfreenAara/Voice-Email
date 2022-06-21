@@ -1,6 +1,7 @@
 package com.example.voice_email;
 import static com.example.voice_email.MainActivity.sender;
 
+import javax.mail.Authenticator;
 import javax.mail.Session;
 
 import android.app.ProgressDialog;
@@ -95,7 +96,13 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
     protected Void doInBackground(Void... params) {
         //Creating properties
         Properties props = new Properties();
-        Session session = Session.getDefaultInstance(props, null);
+        Session session = Session.getDefaultInstance(props,
+                new Authenticator() {
+                    protected PasswordAuthentication  getPasswordAuthentication() {
+                        return new PasswordAuthentication(
+                                "shaikafreenaara2001@gmail.com", "iccefpaeeyjvwuai");
+                    }
+                });
 
         //Configuring properties for gmail
         //If you are not using gmail you may need to change the values
@@ -140,7 +147,7 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
             mm.setText(message);
 
             //Sending email
-            Transport.send(mm);
+            Transport.send(mm,"shaikafreenaara2001@gmail.com", "iccefpaeeyjvwuai");
 
         } catch (MessagingException e) {
             e.printStackTrace();

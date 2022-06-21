@@ -13,7 +13,7 @@
         android:theme="@style/Theme.VoiceEmail">
         <activity
             android:name=".SendMail"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SecondActivity"
             android:exported="false" />

@@ -153,11 +153,18 @@ public class SecondActivity extends AppCompatActivity {
                             break;
 
                         default:
-                            if(result.get(0).equals("s"))
+                            if(result.get(0).equals("s") || result.get(0).equals("yes"))
                             {
                                 status.setText("Sending");
                                 speak("Sending the mail");
                                 sendEmail();
+                                speak("Successfully sent the mail,Closing the application");
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        exitFromApp();
+                                    }
+                                }, 4000);
                             }else
                             {
                                 status.setText("Restarting");
