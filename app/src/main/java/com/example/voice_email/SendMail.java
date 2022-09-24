@@ -100,7 +100,7 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
                 new Authenticator() {
                     protected PasswordAuthentication  getPasswordAuthentication() {
                         return new PasswordAuthentication(
-                                "shaikafreenaara2001@gmail.com", "iccefpaeeyjvwuai");
+                                sender, "iccefpaeeyjvwuai");
                     }
                 });
 
@@ -147,7 +147,7 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
             mm.setText(message);
 
             //Sending email
-            Transport.send(mm,"shaikafreenaara2001@gmail.com", "iccefpaeeyjvwuai");
+            Transport.send(mm,sender, "iccefpaeeyjvwuai");
 
         } catch (MessagingException e) {
             e.printStackTrace();

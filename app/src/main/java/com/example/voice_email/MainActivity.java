@@ -78,11 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 String personId = acct.getId();
                 Uri personPhoto = acct.getPhotoUrl();
                 sender=personEmail;
-                //Intent  in = new Intent(MainActivity.this, SendMail.class);
-                //in.putExtra("user_name",personEmail);
-
-
-
 
                 Toast.makeText(this,"user mail: "+personEmail,Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, SecondActivity.class));

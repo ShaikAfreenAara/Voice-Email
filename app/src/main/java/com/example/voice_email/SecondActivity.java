@@ -164,7 +164,7 @@ public class SecondActivity extends AppCompatActivity {
                                     public void run() {
                                         exitFromApp();
                                     }
-                                }, 4000);
+                                }, 5000);
                             }else
                             {
                                 status.setText("Restarting");
